@@ -13,9 +13,9 @@ c3 =Country.create(:name => 'Australia',:population => '24746932',:language =>'E
 c4 =Country.create(:name => 'Brazil',:population => '209909159',:language =>'Portuguese', :code =>'BR')
 
 User.destroy_all
-u1 = User.create(:name =>'Bob', :dob =>20000406, :email => 'bo@ga.co')
-u2 = User.create(:name =>'Thomas', :dob =>19961123, :email => 'bo@ga.co')
-u3 = User.create(:name =>'William', :dob =>19990612, :email => 'bo@ga.co')
+u1 = User.create(:name =>'Bob', :dob =>20000406, :email => 'bo@ga.co', :password => 'chicken',:admin => true)
+u2 = User.create(:name =>'Thomas', :dob =>19961123, :email => 'ts@ga.co',:password =>'chicken')
+u3 = User.create(:name =>'William', :dob =>19990612, :email => 'wm@ga.co', :password => 'chicken')
 
 
 Sight.destroy_all

@@ -1,0 +1,2 @@
+module TriplistsHelper
+end

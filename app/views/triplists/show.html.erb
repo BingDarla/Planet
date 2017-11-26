@@ -1,0 +1,17 @@
+<h1>Trip lists</h1>
+<% @triplists.each do |list| %>
+<li>
+  <%= list.name %> :
+  <%  list.sights.each do |sight| %>
+  <%= link_to sight.name, sights_show_path(sight) %>,
+  <%= image_tag(sight.image, :class => 'thumb') %>
+  <% end %>
+
+</li>
+<% end %>
+
+<div class="controls">
+  <%= link_to 'Edit Trip', triplists_edit_path(@current_id) %>
+  |
+  <%= link_to 'Delete Trip', @current, :method => 'delete', :data => { :confirm => 'You sure?' } %>
+</div>
