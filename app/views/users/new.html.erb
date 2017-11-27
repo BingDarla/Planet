@@ -1,31 +1,34 @@
 <h1>Sign up</h1>
 
+
 <% if @user.errors.any? %>
-  <ol>
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <span class="sr-only">Error:</span>
+      <%= msg %>. 
     <% end %>
-  </ol>
+  </div>
 <% end %>
 
 <%= form_for @user do |f| %>
 <div class="form-group">
-<%= f.label :name %>
-<%= f.text_field :name ,:class =>'form-control'%>
+  <%= f.label :name %>
+  <%= f.text_field :name ,:class =>'form-control'%>
 </div>
 <div class="form-group">
-<%= f.label :email %>
-<%= f.email_field :email,:class =>'form-control' %>
+  <%= f.label :email %>
+  <%= f.email_field :email,:class =>'form-control' %>
 </div>
 <div class="form-group">
-<%= f.label :password %>
-<%= f.password_field :password,:class =>'form-control' %>
+  <%= f.label :password %>
+  <%= f.password_field :password,:class =>'form-control' %>
 </div>
 <div class="form-group">
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation,:class =>'form-control' %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation,:class =>'form-control' %>
 </div>
 <div class="form-group">
-<%= f.submit 'Sign up', :class =>'btn btn-primary'%>
+  <%= f.submit 'Sign up', :class =>'btn btn-primary'%>
 </div>
 <% end %>

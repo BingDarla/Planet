@@ -4,19 +4,19 @@ var map = AmCharts.makeChart("chartdiv", {
   "map": "worldLow",
   "areas": [{
     "id": "AU",
-    "modalUrl": "http://localhost:3000/countries/27",
+    "modalUrl": "http://localhost:3000/countries/3",
     "selectable": true
   }, {
     "id": "JP",
-    "modalUrl": "http://localhost:3000/countries/26",
+    "modalUrl": "http://localhost:3000/countries/2",
     "selectable": true
   }, {
     "id": "CN",
-    "modalUrl": "http://localhost:3000/countries/25",
+    "modalUrl": "http://localhost:3000/countries/1",
     "selectable": true
   },{
     "id": "BR",
-    "modalUrl": "http://localhost:3000/countries/28",
+    "modalUrl": "http://localhost:3000/countries/4",
     "selectable": true
   }]
 },
@@ -26,11 +26,10 @@ var map = AmCharts.makeChart("chartdiv", {
 "listeners": [{
   "event": "clickMapObject",
   "method": function(event) {
-    $.fancybox({
-      "href": event.mapObject.modalUrl,
-      "title": event.mapObject.title,
-      "type": "iframe"
-    });
+    {
+      window.location.href = event.mapObject.modalUrl
+  
+    };
   }
 }]
 });

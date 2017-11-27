@@ -2,11 +2,19 @@
 <ul>
 
 <h1><%= @country.name %></h1>
-<% @country.sights.each do |sight| %>
-<li>
-<%= link_to sight.name,sight_path(sight) %>
-</li>
-<% end %>
+
+<div class="row">
+
+  <% @country.sights.each do |sight| %>
+  <div class="col-md-4">
+    <a  class="thumbnail">
+      <img src="<%= sight.image %>" alt="<%= sight.name %>"></a>
+    <p><%= sight.info %></p>
+    <p><a href="" class="btn btn-primary" role="button">Edit</a></p>
+    </div>
+    <% end %>
 
 
-</ul>
+
+
+</div>

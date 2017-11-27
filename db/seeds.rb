@@ -32,6 +32,13 @@ t2 = Triplist.create(:name =>'Moon')
 t3 = Triplist.create(:name =>'Sun')
 t4 = Triplist.create(:name =>'Venus')
 
+Comment.destroy_all
+cm1 = Comment.create(:content => "That's great!")
+cm2 = Comment.create(:content => "The biggest water fall I ever saw. ")
+cm3 = Comment.create(:content => "I almost died..when reached the top")
+cm4 = Comment.create(:content => "That's amazing!")
+
+
 c1.sights << s3
 c1.sights << s6
 c2.sights << s1
@@ -48,3 +55,12 @@ t1.sights << s1 << s4 << s6
 t2.sights << s1 << s5
 t3.sights << s3 << s4 << s5
 t4.sights << s2 << s3 << s6
+
+u1.comments << cm1
+u2.comments << cm2 << cm3
+u3.comments << cm4
+
+s4.comments << cm2
+s1.comments << cm3
+s6.comments << cm1
+s2.comments << cm4
