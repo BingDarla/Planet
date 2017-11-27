@@ -6,7 +6,7 @@ class SightsController < ApplicationController
   end
 
   def show
-    raise params.inspect
+    # raise params.inspect
     @sight = Sight.find params[:id]
   end
 

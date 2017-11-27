@@ -2,16 +2,19 @@
 <html>
   <head>
     <title>Planet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'https://www.amcharts.com/lib/3/ammap.js' %>
-    <%= javascript_include_tag 'https://www.amcharts.com/lib/3/maps/js/worldLow.js' %>
-    <%= javascript_include_tag 'home' %>
+
+
+    </script>
   </head>
 
   <body>
+  <div class="container">
     <nav class="nav">
       <%= link_to 'Home',root_path %>
       <% if @current_user.present? %>
@@ -29,5 +32,7 @@
 
 
     <%= yield %>
+
+  </div>
   </body>
 </html>

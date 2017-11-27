@@ -13,5 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require fancybox
+//= require ammap
+//= require worldLow
 //= require bootstrap-sprockets
 //= require_tree .

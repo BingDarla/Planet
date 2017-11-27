@@ -1,0 +1,12 @@
+
+<ul>
+
+<h1><%= @country.name %></h1>
+<% @country.sights.each do |sight| %>
+<li>
+<%= link_to sight.name,sight_path(sight) %>
+</li>
+<% end %>
+
+
+</ul>

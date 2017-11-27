@@ -1,22 +1,23 @@
 Rails.application.routes.draw do
-  get 'sights/edit'
 
-  get 'sights/new'
-
-  get 'sights/show'
-
-  get 'sights/delete'
-
-  get 'triplists/edit'
-
-  get 'triplists/show'
 
   root :to =>'pages#home'
   resources :users, :only =>[:index, :new, :create,:edit,:update]
+  get 'triplists/edit'
+  get 'triplists/show'
+
+
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+  resources :countries, :only =>[:index, :show]
+
+  resources :sights, :only =>[:new, :create, :edit, :update, :show, :delete]
+
+
+
+
 
 
 

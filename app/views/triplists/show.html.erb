@@ -3,7 +3,7 @@
 <li>
   <%= list.name %> :
   <%  list.sights.each do |sight| %>
-  <%= link_to sight.name, sights_show_path(sight) %>,
+  <%= link_to sight.name, sight_path(sight) %>,
   <%= image_tag(sight.image, :class => 'thumb') %>
   <% end %>
 
