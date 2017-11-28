@@ -1,0 +1,269 @@
+    1  cd Pro
+    2  cd Project/
+    3  atom ~/.bash_profile
+    4  psql
+    5  echo $PATH
+    6  gem install pg
+    7  rails new tunr -T --skip-git -d postgress
+    8  rails new tunr -T --skip-git -d postgressql
+    9  rails new tunr -T --skip-git -d postgresql
+   10  cd tunr/
+   11  rails db:create
+   12  rails generate model Song
+   13  atom .
+   14  rails db:migrate
+   15  annotate
+   16  rails db
+   17  rails generate model Artist
+   18  rails db:migrate
+   19  rails generate model Album
+   20  rails db:migrate
+   21  rails db:rollback
+   22  rails db:migrate
+   23  rails generate model Genre
+   24  rails db:migrate && annotate
+   25  rails generate model Mixtape
+   26  rails db:migrate
+   27  rails generate model User
+   28  rails db:migrate
+   29  annotate
+   30  rails generate migration create_genres_songs
+   31  rails generate migration CreateMixtapesSongs
+   32  rails db:migrate
+   33  history
+   34  rails db
+   35  rails db:seed
+   36  rails db:seed
+   37  rails db:seed
+   38  bundle
+   39  rails db:migrate
+   40  rails db:rollback
+   41  rails db:rollback
+   42  rails db:rollback
+   43  rails db:rollback
+   44  rails db:rollback
+   45  rails db:rollback
+   46  rails db:rollback
+   47  rails db:rollback
+   48  rails db:rollback
+   49  rails db:create
+   50  rails db:migrate
+   51  rails db:seed
+   52  rails server
+   53  rails server
+   54  rails generate controller Users index new edit show
+   55  rails route
+   56  rails routes
+   57  rails routes
+   58  rails generate controller Pages
+   59  rails generate migration add_password_digest_to_users
+   60  rails db:migrate
+   61  bundle
+   62  rails db:migrate
+   63  rails db:migrate
+   64  rails console
+   65  rails db:seed
+   66  rails db:seed
+   67  rails console
+   68  rails routes
+   69  rails generate controller Session new
+   70  rails routes
+   71  ls
+   72  cd GA
+   73  ls
+   74  cd wdi-24/
+   75  git pull upstream master
+   76  rails generate migration add_admin_to_users admin:boolean
+   77  rails db:migrate
+   78  annotate
+   79  rails console
+   80  rails routes
+   81  rails routes
+   82  bundle
+   83  bundle
+   84  rails server
+   85  ralis server
+   86  rails server
+   87  cd ..
+   88  ls
+   89  rails new planet -T -d postgresql
+   90  cd planet/
+   91  ls
+   92  git init
+   93  git remote -v
+   94  git remote add origin https://github.com/BingDarla/Planet.git
+   95  git status
+   96  git add .
+   97  git commit -m "project start"
+   98  git push origin master
+   99  rails db:create
+  100  rails gererate migration create_countries
+  101  rails generate migration create_countries
+  102  rails generate migration create_users
+  103  rails generate migration create_sights
+  104  atom .
+  105  annotate
+  106  cd ..
+  107  ls
+  108  cd planet/
+  109  git add .
+  110  git commit -m "database setting done"
+  111  git push origin master
+  112  rails generate migration create_triplists
+  113  rails generate migration create_sights_triplists
+  114  rails db:migrate
+  115  rails db:migrate
+  116  annotate
+  117  bundle
+  118  rails db:drop
+  119  rails db:create
+  120  rails db:migrate
+  121  annatate
+  122  annotate
+  123  rails generate model Country
+  124  rails db:migrate
+  125  rails db:seed
+  126  rails db:migrate
+  127  rails db:seed
+  128  rails db:seed
+  129  rails db:seed
+  130  rails db:seed
+  131  rails db:seed
+  132  rails db:drop
+  133  rails db:create
+  134  rails db:migrate
+  135  rails db:seed
+  136  rails db:seed
+  137  rails db:seed
+  138  rails db:seed
+  139  rails db
+  140  pry
+  141  rails console
+  142  rails console
+  143  git pull upstream master
+  144  rains generate controller User edit index new
+  145  rails generate controller User edit index new
+  146  rails generate controller Page home
+  147  rails routes
+  148  bundle
+  149  rails route
+  150  rails routes
+  151  rails db:seed
+  152  rails db:seed
+  153  rails db:seed
+  154  rails routes
+  155  rails console
+  156  rails console
+  157  rails server
+  158  rails server
+  159  rails server
+  160  rails server
+  161  bundle
+  162  bundle
+  163  rails server
+  164  bundle
+  165  rails server
+  166  rails server
+  167  rails server
+  168  bundle
+  169  bundle
+  170  rails server
+  171  rails routes
+  172  rails generate controller Triplists edit show
+  173  rails routes
+  174  rails generate controller Sights edit new show delete
+  175  rails routes
+  176  git status
+  177  git add .
+  178  git commit -m "basic associate database done'
+  179  "
+  180  git push origin master
+  181  cd ..
+  182  brew install heroku
+  183  heroku -v
+  184  which heroku
+  185  heroku login
+  186  rails new heroku_demo -d postgresql
+  187  cd heroku_demo/
+  188  git status
+  189  bundle
+  190  atom .
+  191  bundle
+  192  bundle
+  193  bundle
+  194  git add .
+  195  git commit -m "heroku"
+  196  heroku create
+  197  git config --list | grep heroku
+  198  git push heroku master
+  199  heroku run rake ab:migrate
+  200  heroku run rake db:migrate
+  201  heroku open
+  202  heroku logs
+  203  cd Project
+  204  ls
+  205  cd planet/
+  206  rails server
+  207  rails server
+  208  bundle
+  209  bundle
+  210  git add .
+  211  git commit -m 'heroku'
+  212  git config --list | grep keroku
+  213  git push heroku master
+  214  heroku create
+  215  git push heroku master
+  216  git status
+  217  git push origin master
+  218  rails server
+  219  rails db:drop
+  220  rails db:drop
+  221  rails console
+  222  rails generate controller Countries index new edit show
+  223  rails route
+  224  rails routes
+  225  rails routes
+  226  git status
+  227  curl https://www.amcharts.com/lib/3/ammap.js > app/assets/javascripts/ammap.js
+  228  curl https://www.amcharts.com/lib/3/maps/js/worldLow.js > app/assets/javascripts/worldLow.js
+  229  curl cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css > app/assets/stylesheets/fancybox.css
+  230  bundle
+  231  rails generate migration create_comments
+  232  cd Project/
+  233  ls
+  234  cd planet
+  235  ls
+  236  rails db:drop
+  237  rails db:drop
+  238  rails db:create
+  239  rails db:migrate
+  240  rails db:seed
+  241  atom .
+  242  rails db:seed
+  243  rails db:seed
+  244  rails db:seed
+  245  rails db:seed --trace
+  246  rails db:drop
+  247  rails db:create
+  248  rails db:migrate
+  249  rails db:seed
+  250  annotation
+  251  nanotate
+  252  annotate
+  253  rails server
+  254  rails console
+  255  rails routes
+  256  git status
+  257  git add .
+  258  git commit -m "removed fancy box"
+  259  git push origin master
+  260  git status
+  261  git push heroku master
+  262  rails routes
+  263  rails generate controller Comments new create delete
+  264  rails routes
+  265  logs
+  266  log
+  267  history
+  268  history save
+  269  history >> history.txt

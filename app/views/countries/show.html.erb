@@ -1,20 +1,43 @@
+<% if @current_user.present? %>
 
-<ul>
+  <h1><%= @country.name %></h1>
 
-<h1><%= @country.name %></h1>
+  <div class="row">
 
-<div class="row">
+    <% @country.sights.each do |sight| %>
+      <div class="col-md-4">
+        <a class="thumbnail">
+          <img src="<%= sight.image %>" alt="<%= sight.name %>"></a>
+        <p><%= sight.info %></p>
+        <% if sight.comments.any? %>
+          <h3>Review
+          </h3>
+          <% sight.comments.each do |c| %>
+            <p><%= c.created_at %></p>
+            <p><%= c.user.name %>
+              :
+              <%= c.content %>
+            </p>
+          <% end %>
+        <% end %>
+        <div class="btn-group" role="group">
+          <p><%= link_to 'Add Commment',new_sight_comment_path(sight.id) %></p>
+          <% if @current_user.admin? %>
+            <%= link_to "Edit",edit_sight_path(sight.id),:class=>'btn btn-primary' %>
+            <%= link_to "Delete",@sight,:class=>'btn btn-primary',:method =>'delete', :data => {:comfirm => "Are you sure?"} %>
+          <% end %>
 
-  <% @country.sights.each do |sight| %>
-  <div class="col-md-4">
-    <a  class="thumbnail">
-      <img src="<%= sight.image %>" alt="<%= sight.name %>"></a>
-    <p><%= sight.info %></p>
-    <p><a href="" class="btn btn-primary" role="button">Edit</a></p>
-    </div>
+          <%= link_to "Read more", sight_path(sight.id), :class=>"btn btn-primary" %>
+        </div>
+      </div>
     <% end %>
 
+    <div class="col-xs-4">
+      <%= link_to(image_tag('http://www.clker.com/cliparts/J/N/5/l/n/k/add-button-blue-hi.png',:class => 'thumb1'),new_sight_path(@country)) %>
 
 
 
-</div>
+    </div>
+
+  </div>
+<% end %>

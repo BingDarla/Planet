@@ -1,0 +1,20 @@
+<h1>Trip lists</h1>
+
+
+<div class="row">
+<% @triplists.each do |list| %>
+
+
+  <div class="col-xs-12 ">
+    <h2><%= list.name %> </h2>
+    <% list.sights.each do |sight| %>
+    <%=link_to(image_tag(sight.image, :class=>"thumb"),sight_path(sight.id)) %>
+
+  <label> </label>
+    <% end %>
+  </div>
+
+
+<% end %>
+
+</div>

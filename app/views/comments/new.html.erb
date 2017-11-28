@@ -1,0 +1,9 @@
+<h1>Review</h1>
+<p>Find me in app/views/comments/new.html.erb</p>
+<p>Your review will be posted publicly on the web</p>
+<p>Comment for <%=@sight.name %></p>
+<%= form_for [@sight, @comment] do |f| %>
+<%= f.label :content %>
+<%= f.text_field :content %>
+<%= f.submit 'Post'  %>
+<% end %>

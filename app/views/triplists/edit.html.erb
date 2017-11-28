@@ -1,2 +1,7 @@
 <h1>Triplists#edit</h1>
 <p>Find me in app/views/triplists/edit.html.erb</p>
+
+
+
+user = @current_user
+@triplist = user.triplists.find params[:id]

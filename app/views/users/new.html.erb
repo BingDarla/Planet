@@ -6,7 +6,7 @@
     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
     <% @user.errors.full_messages.each do |msg| %>
       <span class="sr-only">Error:</span>
-      <%= msg %>. 
+      <%= msg %>.
     <% end %>
   </div>
 <% end %>
@@ -19,6 +19,10 @@
 <div class="form-group">
   <%= f.label :email %>
   <%= f.email_field :email,:class =>'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :dob,'Date of Birth' %>
+  <%= f.date_field :dob,:class =>'form-control' %>
 </div>
 <div class="form-group">
   <%= f.label :password %>

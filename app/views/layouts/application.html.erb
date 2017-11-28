@@ -13,23 +13,24 @@
     </script>
   </head>
 
-  <body>
-
-  <div class="container">
-    <nav class="nav">
-      <%= link_to 'Home',root_path %>
+  <nav class="navbar navbar-inverse">
+    <%= link_to 'Home',root_path %>
       <% if @current_user.present? %>
         <% if @current_user.admin? %>
           <%= link_to 'All users', users_path %>
         <% end %>
         <%= link_to 'Edit Profile',edit_user_path(@current_user) %>
-        <%= link_to 'Trip list', triplists_show_path(@current_user)%>
+        <%= link_to 'Trip list', user_triplists_path(@current_user)%>
         <%= link_to "Sign Out #{ @current_user.name}",login_path, :method =>'delete' %>
       <% else %>
         <%= link_to 'Sign In',login_path %>
         <%= link_to 'Sign Up',new_user_path %>
       <% end %>
-    </nav>
+  </nav>
+  <body>
+
+  <div class="container">
+
 
 
     <%= yield %>

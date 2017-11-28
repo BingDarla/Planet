@@ -15,5 +15,7 @@
 //= require fancybox
 //= require ammap
 //= require worldLow
+//= require none
+//= require export.min 
 //= require bootstrap-sprockets
 //= require_tree .

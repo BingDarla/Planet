@@ -1,5 +1,19 @@
-<h1><%= @sight.name %></h1>
-<%= @sight.location %>
+
+
+<h1><%= @sight.name %> in <%= @sight.location %>, <%= @sight.country.name %></h1>
 <%= image_tag(@sight.image, :class=>'feature') %>
-<%= @sight.category %>
-<%= @sight.info %>
+Category:<%= @sight.category %>
+<p class="lead"><%= @sight.info %></p>
+
+
+
+    <% if @current_user.admin? %>
+    <%=link_to 'Edit', edit_sight_path(@sight) %>
+    <% end %>
+
+    <% @current_user.triplists.each do |list| %>
+    <li>Your triplist: <%= list.name %>
+    <%= link_to 'Add', triplist_add_path(@current_user,list,params[:id]) %>
+    <%= link_to 'Delete',triplist_remove_path(@current_user,list, params[:id]),:method => 'delete' %>
+    </li>
+    <% end %>
