@@ -21,7 +21,7 @@ class TriplistsController < ApplicationController
     @triplist = user.triplists.find params['triplist_id']
     sight = Sight.find params['sight_id']
 
-    if @triplist.sights.find_by_name(sight)
+    if !@triplist.sights.exists?(params[:sight_id])
     @triplist.sights << sight
     end
     redirect_to user_triplists_path

@@ -1,15 +1,18 @@
 class CommentsController < ApplicationController
+  before_action :check_if_logged_in
   def new
-    @sight = Sight.find params[:sight_id]
+    @country = Country.find params[:country_id]
+    @sight = @country.sights.find params[:sight_id]
     @comment = Comment.new
   end
 
   def create
-    # TODO: make sure the user is actually logged in
-    @sight = Sight.find params[:sight_id]
-    comment = @sight.comments.create :content => params[:comment][:content]
+    # make sure the user is actually logged in
+    @country = Country.find params[:country_id]
+    @sight = @country.sights.find params[:sight_id]
+    comment = @sight.comments.create :content => params[:content]
     @current_user.comments << comment
-    redirect_to @sight
+    redirect_to country_path(@country)
   end
 
   def delete

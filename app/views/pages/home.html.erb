@@ -12,15 +12,17 @@
   }
   </style>
 
-  <h2> pages/home.page</h2>
+
 
 <% if !@current_user.present? %>
+<div class= "map">
 <div id="chartdiv1"></div>
-
+</div>
 <% end %>
 
 
 <% if @current_user.present? %>
-<%= "You can see this after login" %>
+<div class= "map">
 <div id="chartdiv"></div>
+</div>
 <% end %>

@@ -11,6 +11,12 @@ c1 =Country.create(:name => 'China',:population => '1403500365',:language =>'Man
 c2 =Country.create(:name => 'Japan',:population => '127366304',:language =>'Japanese', :code =>'JP')
 c3 =Country.create(:name => 'Australia',:population => '24746932',:language =>'English', :code =>'AU')
 c4 =Country.create(:name => 'Brazil',:population => '209909159',:language =>'Portuguese', :code =>'BR')
+c5 =Country.create(:name => 'Canada',:population => '209909159',:language =>'English', :code =>'CA')
+c6 =Country.create(:name => 'United States',:population => '209909159',:language =>'English', :code =>'US')
+c7 =Country.create(:name => 'Greenland',:population => '209909159',:language =>'Portuguese', :code =>'GL')
+c8 =Country.create(:name => 'Argentina',:population => '209909159',:language =>'Spanish', :code =>'AR')
+c9 =Country.create(:name => 'Russia',:population => '209909159',:language =>'Russian', :code =>'AU')
+c10 =Country.create(:name => 'Angola',:population => '209909159',:language =>'Portuguese', :code =>'AO')
 
 User.destroy_all
 u1 = User.create(:name =>'Bob', :dob =>20000406, :email => 'bo@ga.co', :password => 'chicken',:admin => true)

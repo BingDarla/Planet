@@ -4,12 +4,27 @@
 <%= image_tag(@sight.image, :class=>'feature') %>
 Category:<%= @sight.category %>
 <p class="lead"><%= @sight.info %></p>
+<% if @sight.comments.any? %>
+  <h3>Review
+  </h3>
+  <% @sight.comments.each do |c| %>
+    <p><%= c.created_at %></p>
+    <p><%= c.user.name %>
+      :
+      <%= c.content %>
+    </p>
+  <% end %>
+  <% end %>
 
-
-
-    <% if @current_user.admin? %>
-    <%=link_to 'Edit', edit_sight_path(@sight) %>
+  <p><%= link_to 'Add Commment',new_country_sight_comment_path(@sight.country_id,@sight) %></p>
+  <% if @current_user.admin? %>
+    <%= link_to "Edit",edit_country_sight_path(@sight.country_id,@sight),:class=>'btn btn-primary' %>
+    <%= link_to "Delete",[@sight.country,@sight],:class=>'btn btn-primary',:method =>'delete', :data => {:comfirm => "Are you sure?"} %>
     <% end %>
+
+
+
+
 
     <% @current_user.triplists.each do |list| %>
     <li>Your triplist: <%= list.name %>

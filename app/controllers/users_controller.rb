@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find params[:id]
   end
+  
   def update
     user = @current_user
     user.update user_params

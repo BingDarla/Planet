@@ -1,0 +1,42 @@
+<%= form_for [@country,@sight] do |f|%>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name,:class =>'form-control',:required => true %>
+</div>
+<div class="form-group">
+  <%= f.label :location %>
+  <%= f.text_field :location,:class =>'form-control',:required => true %>
+</div>
+<div class="form-group">
+  <%= f.label :image %>
+  <%= f.url_field :image,:class =>'form-control',:required => true%>
+</div>
+
+<div class="form-group">
+  <%= f.label :category %>
+  <select class="form-control" name = 'category'>
+  <option>Natural</option>
+  <option>Culture</option>
+  <option>Historical</option></select>
+
+</div>
+<div class="form-group">
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude,:class =>'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :longtitude %>
+  <%= f.text_field :longtitude,:class =>'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :info ,'Intro' %>
+  <%=f.text_area :info, :rows => 4, :class =>'form-control',:required => true%>
+  <!-- <%= f.text_field :info,:class =>'form-control text' %> -->
+
+
+</div>
+<div class="form-group">
+  <%= f.submit 'Post',:class =>'btn btn-primary'%>
+</div>
+
+<% end %>

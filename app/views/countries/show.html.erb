@@ -21,19 +21,19 @@
           <% end %>
         <% end %>
         <div class="btn-group" role="group">
-          <p><%= link_to 'Add Commment',new_sight_comment_path(sight.id) %></p>
+          <p><%= link_to 'Add Commment',new_country_sight_comment_path(@country,sight) %></p>
           <% if @current_user.admin? %>
-            <%= link_to "Edit",edit_sight_path(sight.id),:class=>'btn btn-primary' %>
-            <%= link_to "Delete",@sight,:class=>'btn btn-primary',:method =>'delete', :data => {:comfirm => "Are you sure?"} %>
+            <%= link_to "Edit",edit_country_sight_path(@country,sight),:class=>'btn btn-primary' %>
+            <%= link_to "Delete",[@country,sight],:class=>'btn btn-primary',:method =>'delete', :data => {:comfirm => "Are you sure?"} %>
           <% end %>
 
-          <%= link_to "Read more", sight_path(sight.id), :class=>"btn btn-primary" %>
+          <%= link_to "Read more", country_sight_path(@country,sight), :class=>"btn btn-primary" %>
         </div>
       </div>
     <% end %>
 
     <div class="col-xs-4">
-      <%= link_to(image_tag('http://www.clker.com/cliparts/J/N/5/l/n/k/add-button-blue-hi.png',:class => 'thumb1'),new_sight_path(@country)) %>
+      <%= link_to(image_tag('http://www.clker.com/cliparts/J/N/5/l/n/k/add-button-blue-hi.png',:class => 'thumb1'),new_country_sight_path(@country)) %>
 
 
 
