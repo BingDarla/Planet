@@ -15,6 +15,7 @@
 
 
 <% if !@current_user.present? %>
+<h1>Best Places to visit in 2018</h1>
 <div class= "map">
 <div id="chartdiv1"></div>
 </div>
@@ -22,7 +23,8 @@
 
 
 <% if @current_user.present? %>
-<div class= "map">
+<h1>Best Places to visit in 2018</h1>
+<div class= "map">  
 <div id="chartdiv"></div>
 </div>
 <% end %>

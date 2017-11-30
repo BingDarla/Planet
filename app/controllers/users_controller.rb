@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find params[:id]
   end
-  
+
   def update
     user = @current_user
     user.update user_params
@@ -25,14 +25,22 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if params[:term]
+      @users= User.where('name LIKE ?', "%#{params[:term]}%")
+      if @users.count==0
+       @users=User.where('email LIKE ?', "%#{params[:term]}%")
+     end
+   else
+    User.all
+  end
   end
 
 
 private
 def user_params
-  params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  params.require(:user).permit(:name, :email, :password,:dob, :password_confirmation, :term)
 
 end
+
 
 end

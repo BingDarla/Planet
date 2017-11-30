@@ -14,23 +14,3 @@
  *= require fancybox
  *= require_self
  */
-
- .container{
-   max-width: 960px;
-
- }
-
-body{
-
-  background-image: url('http://res.cloudinary.com/dc5fpkcwj/image/upload/o_27/v1511928042/background_lkpf4f.jpg');
-
-}
-.text {
-  height: 10em;
-}
-.navtext {
-  font-style:italic;
-}
-.map {
-  margin-top: 8em;
-}

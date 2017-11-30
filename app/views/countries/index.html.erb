@@ -1,7 +1,7 @@
 <h1>Country list</h1>
 <ul>
 <% @countries.each do |country| %>
-<li>
+<li class="country-list">
   <%=link_to country.name.upcase, country_path(country)  %>:
   <% country.sights.each do |sight| %>
   <%= link_to sight.name,country_sight_path(country,sight) %>

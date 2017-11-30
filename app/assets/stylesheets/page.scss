@@ -1,3 +1,71 @@
 // Place all the styles related to the Page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Handlee|Luckiest+Guy');
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
+ .container{
+   max-width: 960px;
+
+ }
+
+body{
+
+  background-image: url('http://res.cloudinary.com/dc5fpkcwj/image/upload/o_27/v1511928042/background_lkpf4f.jpg');
+
+}
+h1,h2 {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+}
+.text {
+  height: 10em;
+}
+.navtext {
+  font-style:italic;
+}
+.map {
+  margin-top: 5em;
+}
+.user-index {
+  background-color: #7f9dbd;
+  border-color: black;
+}
+.divider {
+  height: 3em;
+}
+.triplist{
+  font-size: 20px;
+  font-family:fantasy;
+  margin-top: 2px;
+  margin-left: 30em;
+  list-style-type: none;
+}
+.comment{
+  font-family: 'Handlee', cursive;
+}
+.feature {
+  width: 100%;
+  box-shadow: 8px 8px 10px #aaa;
+  border-radius: 10px;
+}
+.intro{
+  font-family:'Gentium Book Basic', serif;
+}
+.country-list{
+  font-style: italic;
+  list-style-type: none;
+  font-size: 20px;
+}
+.category{
+  margin-top:1em;
+  font-family: 'Luckiest Guy', cursive;
+}
+.simple-info{
+
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  height: 3em;
+
+}

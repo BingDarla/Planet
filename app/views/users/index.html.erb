@@ -1,8 +1,29 @@
 <h1>User Index</h1>
+<div class="row">
+  <div class="col-md-1 user-index">Gender</div>
+  <div class="col-md-3 user-index">Name</div>
+  <div class="col-md-3 user-index">Date of Birth</div>
+  <div class="col-md-3 user-index">Email</div>
+</div>
+
+<% if !@users.nil? %>
 <% @users.each do |user| %>
-<li>
-<%= user.name %>
-Date of Birth is :<%= user.dob %>
-, email :<%= user.email %>
-</li>
+<div class="row">
+<div class="col-md-1 user-index"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+<div class="col-md-3 user-index"><%= user.name %></div>
+<div class="col-md-3 user-index"><%= user.dob %></div>
+<div class="col-md-3 user-index"><%= user.email %></div>
+</div>
 <% end  %>
+<% end  %>
+
+
+<p class="divider"></p>
+
+<div class="row">
+  <div class="col-md-1 "></div>
+<%= form_tag(users_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+</div>

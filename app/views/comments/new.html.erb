@@ -4,6 +4,6 @@
 <p>Comment for <%=@sight.name %></p>
 <%= form_for [@country,@sight, @comment] do |f| %>
 <%= f.label :content,"Review" %>
-<textarea class="form-control" name='content' rows="4"></textarea>
+<%=f.text_area :content, :rows => 4, :class =>'form-control',:required => true%>
 <%= f.submit 'Post'  %>
 <% end %>

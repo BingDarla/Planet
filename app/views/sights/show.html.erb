@@ -1,34 +1,68 @@
-
-
-<h1><%= @sight.name %> in <%= @sight.location %>, <%= @sight.country.name %></h1>
+<h1><%= @sight.name %>
+  in
+  <%= @sight.location %>,
+  <%= @sight.country.name %></h1>
 <%= image_tag(@sight.image, :class=>'feature') %>
-Category:<%= @sight.category %>
-<p class="lead"><%= @sight.info %></p>
+<p class="category">Category:<%= @sight.category %></p>
+<p class="intro"><%= @sight.info %></p>
 <% if @sight.comments.any? %>
   <h3>Review
   </h3>
   <% @sight.comments.each do |c| %>
-    <p><%= c.created_at %></p>
-    <p><%= c.user.name %>
-      :
-      <%= c.content %>
-    </p>
+    <p ><%= c.user.name %>--<%= c.created_at %></p>
+
+    <p class="comment"><%= c.content %></p>
+
   <% end %>
+<% end %>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Comment</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Review</h4>
+      </div>
+      <%= form_for [@sight.country, @sight, Comment.new] do |f| %>
+      <div class="modal-body">
+        <div class="form-group">
+          <%= f.label :content ,'' %>
+          <%= f.text_area :content, :rows => 4, :class =>'form-control',:required => true%>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Post",:class=>"btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<% if @current_user.admin? %>
+<%= link_to "Edit",edit_country_sight_path(@sight.country_id,@sight),:class=>'btn btn-primary' %>
+<%= link_to "Delete",[@sight.country,@sight],:class=>'btn btn-primary',:method =>'delete', :data => {:comfirm => "Are you sure?"} %>
+<% end %>
+
+<% @current_user.triplists.each do |list| %>
+<div class="row triplist">
+
+
+    <div class="col-md-6">Triplist: <%= list.name %></div>
+
+    <div class="col-md-2">
+      <%= link_to triplist_add_path(@current_user,list,params[:id]), class: "btn btn-primary btn-sm" do %>
+      <i class="glyphicon glyphicon-floppy-save "></i>
+    <% end %>
+  </div>
+
+  <div class="col-md-2"><%= link_to triplist_remove_path(@current_user,list, params[:id]),:method => 'delete', class: "btn btn-primary btn-sm" do %>
+    <i class="glyphicon glyphicon-floppy-remove"></i>
   <% end %>
-
-  <p><%= link_to 'Add Commment',new_country_sight_comment_path(@sight.country_id,@sight) %></p>
-  <% if @current_user.admin? %>
-    <%= link_to "Edit",edit_country_sight_path(@sight.country_id,@sight),:class=>'btn btn-primary' %>
-    <%= link_to "Delete",[@sight.country,@sight],:class=>'btn btn-primary',:method =>'delete', :data => {:comfirm => "Are you sure?"} %>
-    <% end %>
-
-
-
-
-
-    <% @current_user.triplists.each do |list| %>
-    <li>Your triplist: <%= list.name %>
-    <%= link_to 'Add', triplist_add_path(@current_user,list,params[:id]) %>
-    <%= link_to 'Delete',triplist_remove_path(@current_user,list, params[:id]),:method => 'delete' %>
-    </li>
-    <% end %>
+</div>
+</li>
+</div>
+<% end %>
