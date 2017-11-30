@@ -28,14 +28,18 @@
             <ul class="dropdown-menu">
               <li><%= link_to 'Trip list', user_triplists_path(@current_user),:class =>'navtext'%></li>
               <li><%= link_to 'New',new_user_triplist_path(@current_user),:class =>'navtext' %></li>
+              <% if @current_user.triplists.present? %>
+              <% @current_user.triplists.each do |list| %>
+                <li><%= link_to "Delete #{list.name}" ,delete_user_triplist_path(@current_user,list),:method =>'delete',:class =>'navtext'%></li>
+              <% end %>
+            <% end %>
 
-
-            </ul>
-          </li>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Sign Out #{ @current_user.name}",login_path, :method =>'delete',:class =>'navtext' %></li>
           </ul>
-        <% else %>
+        </li>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign Out #{ @current_user.name}",login_path, :method =>'delete',:class =>'navtext' %></li>
+        </ul>
+      <% else %>
         <li><%= link_to 'Sign In',login_path,:class =>'navtext' %></li>
         <li><%= link_to 'Sign Up',new_user_path,:class =>'navtext' %></li>
       <% end %>

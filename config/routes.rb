@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :triplists
   end
 
+  delete '/users/:user_id/triplists/:id' => 'triplists#destroy', as: 'delete_user_triplist' 
+
   get '/users/:user_id/triplists/:triplist_id/add/:sight_id'  => 'triplists#add' , as: 'triplist_add'
   delete '/users/:user_id/triplists/:triplist_id/remove/:sight_id' =>'triplists#remove',as: 'triplist_remove'
 

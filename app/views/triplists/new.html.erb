@@ -1,3 +1,6 @@
-<h1>Create Triplists#edit</h1>
-<input type="text" name="name">
-<button></button>
+<h1>New Triplists</h1>
+<%= form_for [@current_user,@triplist] do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit 'Create', :method => 'post'%>
+<% end %>

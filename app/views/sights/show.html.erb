@@ -51,7 +51,7 @@
 <div class="row triplist">
 
 
-    <div class="col-md-6">Triplist: <%= list.name %></div>
+    <div class="col-md-6"><%= list.name %></div>
 
     <div class="col-md-2">
       <%= link_to triplist_add_path(@current_user,list,params[:id]), class: "btn btn-primary btn-sm" do %>
