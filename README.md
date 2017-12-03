@@ -7,3 +7,4 @@ There are two type of user with different permissions.
 Login as a adminstrator, you can edit/delete/update the information of sight and view all the users who registed in the system besides the normal operating such as creating a new sight, collecting interesting sights into your travel- list, posting comment under a sight.
 The map API used in this project is umchart map.
 
+Online version: https://pacific-waters-84155.herokuapp.com/
