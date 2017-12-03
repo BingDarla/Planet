@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple web project for travel search.
 
-Things you may want to cover:
+After login you can see a clickable map. when clicking a country on the map, it will lead you to the what you can do in that country --sights. The sights devided into several categories, such as historial, cultural, and natural.
+There are two type of user with different permissions. 
+Login as a adminstrator, you can edit/delete/update the information of sight and view all the users who registed in the system besides the normal operating such as creating a new sight, collecting interesting sights into your travel- list, posting comment under a sight.
+The map API used in this project is umchart map.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
