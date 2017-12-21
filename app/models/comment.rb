@@ -4,6 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  content    :text
+#  image      :text
 #  user_id    :integer
 #  sight_id   :integer
 #  created_at :datetime         not null
