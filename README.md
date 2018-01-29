@@ -1,7 +1,7 @@
 # README
 
 A web project for making travel plans-built on Ruby on Rails with PostgreSQL.<br>
-Appied umchart map as API <br>
+Applied umchart map as API <br>
 Implemented user authentication.<br>
 Dynamic menu bar according to user's role and permissions<br>
   As a standard user, you can add new sight in any country, create/update/delete multiple trip lists, and post comments under any sight.<br>
