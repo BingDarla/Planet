@@ -1,6 +1,6 @@
 # README
 
-A web project for making travel plans-built on Ruby on Rails with PostgreSQL.<br>
+A web project design for making travel plans-built on Ruby on Rails with PostgreSQL.<br>
 Applied umchart map as API <br>
 Implemented user authentication.<br>
 Dynamic menu bar according to user's role and permissions<br>
@@ -9,6 +9,6 @@ Dynamic menu bar according to user's role and permissions<br>
   
 <br>
 Sign up as a new user<br>
-By clicking on the country in the map, choose the sight(place) you interest and add to your trip plan.<br>
+By clicking on the country in the map, choose the sight(place) you interest in and add to your trip plan.<br>
 
 Demo: https://pacific-waters-84155.herokuapp.com/
